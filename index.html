@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title> HORIZONTAL - Wydawnictwo Makoto_morpeko137 </title>
+    <title>HORIZONTAL - Wydawnictwo Makoto_morpeko137</title>
     <style>
         body {
             background-color: #C4C977;
@@ -12,7 +12,19 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
+        
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 50px;
+        }
+
         h1 {
             font-size: 6em;
             text-transform: uppercase;
@@ -25,7 +37,6 @@
             transform: skew(-5deg);
             box-shadow: 10px 10px 0 #FF0000; 
         }
-
         p {
             background-color: #1A1A1A; 
             color: #C4C977; 
@@ -37,100 +48,199 @@
             line-height: 1.6;
             transform: rotate(1deg);
         }
-
         p b {
             color: #FF0000; 
             text-transform: uppercase;
         }
-
-        ul {
-            list-style-type: none; 
-            padding: 0;
+        
+        .carousel-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
             width: 80%;
+            max-width: 700px;
             margin: 0 auto;
             border-top: 5px solid #000000;
+            padding-top: 30px;
+        }
+        
+        .nav-btn {
+            background-color: #000000;
+            color: #C4C977;
+            border: 4px solid #FF0000;
+            font-size: 2em;
+            padding: 10px 18px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-family: inherit;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+            height: fit-content;
+        }
+        .nav-btn:hover {
+            background-color: #FF0000;
+            color: #000000;
+        }
+
+        /* Widok – ukrywa to, co wychodzi poza szerokość jednej kolumny */
+        .viewport {
+            overflow: hidden;
+            width: 100%;
+            height: 315px; 
+        }
+
+        /* Kontener poruszający się poziomo – trzyma strony obok siebie */
+        .carousel-track {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.4s ease;
+        }
+
+        /* Pojedyncza strona karuzelowa – ma dokładnie 5 elementów ułożonych pionowo */
+        .carousel-page {
+            min-width: 100%;
+            height: 100%;
+            list-style-type: none; 
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
         }
 
         li {
             background-color: #000000;
             color: #C4C977;
-            margin: 10px 0;
+            margin: 5px 0;
             padding: 0;
             font-size: 1.2em;
             text-transform: uppercase;
             border-left: 10px solid #FF0000; 
+            height: 55px;
+            box-sizing: border-box;
             transition: all 0.2s ease; 
         }
-
         li a {
             color: inherit;
             text-decoration: none;
             display: block;
             padding: 15px;
             width: 100%;
+            box-sizing: border-box;
         }
-
         li:hover {
-            transform: scale(1.03); 
+            transform: scale(1.02); 
             background-color: #333333;
         }
-
         li:hover a {
             color: #FF0000;
         }
 
         .footer {
-            margin-top: 100px;
             font-size: 0.8em;
             background-color: #FF0000;
             color: #000000;
             padding: 10px;
             text-transform: uppercase;
+            width: 100%;
+            margin-top: 50px;
         }
     </style>
 </head>
 <body>
 
-    <h1> Horizontal </h1>
-    
-    <p> 
-        <b>Horizontal</b> to zin wychodzący co 2 tygodnie dla ludzi z undergroundu, którzy chcą ogarniać trochę więcej świata. To nie jest ucieczka od rzeczywistości. Tu patrzymy na nią prosto w twarz.
-    </p>
+    <div class="main-content">
+        <h1>Horizontal</h1>
+        
+        <p> 
+            <b>Horizontal</b> to zin wychodzący co 2 tygodnie dla ludzi z undergroundu, którzy chcą ogarniać trochę więcej świata. To nie jest ucieczka od rzeczywistości. Tu patrzymy na nią prosto w twarz.
+        </p>
 
-<ul>
-  <li>
-    <a href="aliens.html">Numer 6,66 - 13.07.2026 - taka kmina o rządzie usa :) </a>
-  </li>
-  <li>
-    <a href="Pionizuować.png">Numer 6,66 - 12.07.2026 - łap vlepki i udostępniaj ziom</a>
-  </li>
-  <li>
-    <a href="numer6.html">Numer 6 - 11.07.2026 - The Anarchy Cookbook // Death of lace code // sztuka gotyku</a>
-  </li>
-  <li>
-    <a href="numer5,5.html">Numer 5,5 - 27.06.2026 - luźny plan na wakacje</a>
-  </li>
-  <li>
-    <a href="numer5.html">Numer 5 - 27.06.2026 - Cyklizacja // World of Gun: Disassembly // Sztuka Romańska</a>
-  </li>
-  <li>
-    <a href="numer4.html">Numer 4 - 13.06.2026 - Anarchia / sztuka Bizancium</a>
-  </li>
-  <li>
-    <a href="numer3.html">Numer 3 - 30.05.2026 - Historia punku w Polsce / graffiti / sztuka 1. chrześcian</a>
-  </li>
-  <li>
-    <a href="numer2.html">Numer 2 - 16.05.2026 - Lace code / Punk / sztuka starożytnej grecji</a>
-  </li>
-  <li>
-    <a href="numer1.html">Numer 1 - 02.05.2026 - Nowy polski zin / sztuka w prehistorii</a>
-  </li>
-</ul>
+        <div class="carousel-container">
+            <!-- Strzałka w lewo (poprzednia strona) -->
+            <button class="nav-btn" onclick="moveLeft()">&#10094;</button>
+            
+            <div class="viewport">
+                <div class="carousel-track" id="carouselTrack">
+                    
+                    <!-- STRONA 1 (Najnowsze wpisy od góry do dołu) -->
+                    <ul class="carousel-page">
+                        <li>
+                            <a href="aliens.html">Numer 6,66 - 13.07.2026 - taka kmina o rządzie usa :)</a>
+                        </li>
+                        <li>
+                            <a href="Pionizować!.png">Numer 6,66 - 12.07.2026 - łap vlepki i udostępniaj ziom</a>
+                        </li>
+                        <li>
+                            <a href="numer6.html">Numer 6 - 11.07.2026 - The Anarchy Cookbook // Death of lace code // sztuka gotyku</a>
+                        </li>
+                        <li>
+                            <a href="numer5,5.html">Numer 5,5 - 27.06.2026 - luźny plan na wakacje</a>
+                        </li>
+                        <li>
+                            <a href="numer5.html">Numer 5 - 27.06.2026 - Cyklizacja // World of Gun: Disassembly // Sztuka Romańska</a>
+                        </li>
+                    </ul>
+
+                    <!-- STRONA 2 (Starsze wpisy) -->
+                    <ul class="carousel-page">
+                        <li>
+                            <a href="numer4.html">Numer 4 - 13.06.2026 - Anarchia / sztuka Bizancium</a>
+                        </li>
+                        <li>
+                            <a href="numer3.html">Numer 3 - 30.05.2026 - Historia punku w Polsce / graffiti / sztuka 1. chrześcian</a>
+                        </li>
+                        <li>
+                            <a href="numer2.html">Numer 2 - 16.05.2026 - Lace code / Punk / sztuka starożytnej grecji</a>
+                        </li>
+                        <li>
+                            <a href="numer1.html">Numer 1 - 02.05.2026 - Nowy polski zin / sztuka w prehistorii</a>
+                        </li>
+                        <!-- Puste li jako wypełnienie strukturalne, jeśli brakuje do 5 na drugiej stronie -->
+                        <li style="visibility: hidden; pointer-events: none;">
+                            <a>Placeholder</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            
+            <!-- Strzałka w prawo (następna strona w prawo) -->
+            <button class="nav-btn" onclick="moveRight()">&#10095;</button>
+        </div>
+    </div>
 
     <div class="footer">
         BY Makoto_morpeko137 // NO PROKRASTYNACJA // NO FEAR
     </div>
+
+    <script>
+        const track = document.getElementById('carouselTrack');
+        const pages = track.querySelectorAll('.carousel-page');
+        let currentPage = 0;
+        const totalPages = pages.length;
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentPage * 100}%)`;
+        }
+
+        function moveRight() {
+            if (currentPage < totalPages - 1) {
+                currentPage++;
+                updateCarousel();
+            }
+        }
+
+        function moveLeft() {
+            if (currentPage > 0) {
+                currentPage--;
+                updateCarousel();
+            }
+        }
+    </script>
+
 </body>
 </html>
-
-
