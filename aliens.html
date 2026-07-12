@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THEY WALK AMONG US</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #000;
+      color: #00ff9d;
+      font-family: 'VT323', monospace;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1px);
+      background-size: 70px 70px;
+      opacity: 0.13;
+      animation: stars 180s linear infinite;
+      pointer-events: none;
+    }
+    .top-bar {
+      position: fixed;
+      top: 25px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 50px;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      z-index: 100;
+    }
+    .container {
+      text-align: center;
+      padding-top: 160px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .title {
+      font-size: 6.8rem;
+      line-height: 1.05;
+      text-shadow: 0 0 15px #00ff9d, 0 0 30px #00ff9d, 0 0 60px #00ff41, 0 0 100px #00ff41;
+      animation: glow 2.5s ease-in-out infinite alternate;
+      margin-bottom: 40px;
+    }
+    .subtitle {
+      font-size: 2.1rem;
+      max-width: 900px;
+      margin: 0 auto 80px;
+      line-height: 1.35;
+    }
+    .content {
+      font-size: 1.65rem;
+      line-height: 1.45;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 40px;
+      border-top: 2px solid #00ff9d;
+      text-align: left;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 20px #00ff9d, 0 0 40px #00ff9d; }
+      to { text-shadow: 0 0 40px #00ff9d, 0 0 80px #00ff9d, 0 0 120px #00ff41; }
+    }
+    @keyframes stars {
+      from { background-position: 0 0; }
+      to { background-position: 1200px 1200px; }
+    }
+    .scroll {
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.4rem;
+      animation: blink 2s infinite;
+    }
+    @keyframes blink { 50% { opacity: 0.25; } }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <divStop fascism</div>
+    <div>DECONSTRUCTED</div>
+  </div>
+
+  <div class="container">
+    <h1 class="title">THEY WALK AMONG US</h1>
+   
+    <p class="subtitle">
+      For years, neofascists and nationalists have spread the myth<br>
+      that refugees and migrants are the real threat.
+    </p>
+
+    <div class="content">
+      <p>For years we were told that America had made progress. The Emancipation Proclamation. The abolition of slavery. The Civil Rights Movement. Years of struggle for equality and dignity.</p>
+      
+      <p>Yet under Donald Trump, many of these hard-won gains feel under attack again.</p>
+
+      <ul style="margin: 25px 0; padding-left: 20px;">
+        <li>He called Mexican immigrants “rapists” and “criminals” when he launched his campaign.</li>
+        <li>His administration separated thousands of migrant children from their parents at the border.</li>
+        <li>He repeatedly attacked Black Lives Matter and called protesters “thugs”.</li>
+        <li>He has praised some of the most extreme far-right figures and movements.</li>
+        <li>His rhetoric has encouraged and energized white nationalist groups.</li>
+        <li>He continues to push mass deportations and policies that treat migrants as invaders rather than human beings.</li>
+        <li>He incited the January 6 Capitol attack and spent months pushing the “Big Lie” that the 2020 election was stolen.</li>
+        <li>He was impeached twice and has been found liable for sexual abuse in civil court.</li>
+        <li>His tax cuts overwhelmingly benefited the rich and corporations while ballooning the national debt.</li>
+        <li>He denied climate change and pulled the U.S. out of the Paris Agreement.</li>
+        <li>His administration mishandled the COVID-19 pandemic, contributing to hundreds of thousands of preventable deaths.</li>
+      </ul>
+
+      <p><strong>Open your eyes.</strong><br>
+      Instead of “Make America Great Again”, we are getting policies that deepen division, fear, and inequality.</p>
+
+      <p>The Trump administration has officially designated Antifa as a terrorist organization. President Trump described its actions as a “sick and dangerous” element of the radical left.</p>
+
+      <p>At the same time, reports continue of excessive force by ICE, sometimes linked to discrimination based on sexual orientation or gender identity.</p>
+
+      <p><strong>If the Right can kill LGBTQ+ people, does that mean the Left can open fire on heterosexual people?</strong><br>
+      No. Killing people is fundamentally wrong — regardless of which side does it. Violence is not the answer.</p>
+
+      <p>The promise of progress is fragile. When fear and division become the main political tools, rights can be rolled back — especially for those at the bottom.</p>
+      
+      <p>This is not about one man. It’s about a system that allows authoritarian tendencies and xenophobia to rise again and again.</p>
+    </div>
+  </div>
+
+  <div class="scroll">↓ SCROLL TO CONTINUE ↓</div>
+</body>
+</html>
