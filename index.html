@@ -156,7 +156,7 @@
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js').then((registration) => {
+          navigator.serviceWorker.register('.sw.js').then((registration) => {
             
             // Sprawdzaj dostępność nowej wersji SW przy otwarciu zinu
             registration.update();
