@@ -2,7 +2,13 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF0000">
     <title>HORIZONTAL - Wydawnictwo Makoto_morpeko137</title>
+    
+    <!-- Link do manifestu PWA -->
+    <link rel="manifest" href="./manifest.json">
+
     <style>
         body {
             background-color: #C4C977;
@@ -83,14 +89,12 @@
             color: #000000;
         }
 
-        /* Widok – ukrywa to, co wychodzi poza szerokość jednej kolumny */
         .viewport {
             overflow: hidden;
             width: 100%;
             height: 315px; 
         }
 
-        /* Kontener poruszający się poziomo – trzyma strony obok siebie */
         .carousel-track {
             display: flex;
             flex-direction: row;
@@ -99,7 +103,6 @@
             transition: transform 0.4s ease;
         }
 
-        /* Pojedyncza strona karuzelowa – ma dokładnie 5 elementów ułożonych pionowo */
         .carousel-page {
             min-width: 100%;
             height: 100%;
@@ -149,6 +152,31 @@
             margin-top: 50px;
         }
     </style>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js').then((registration) => {
+            
+            // Sprawdzaj dostępność nowej wersji SW przy otwarciu zinu
+            registration.update();
+
+            registration.onupdatefound = () => {
+              const installingWorker = registration.installing;
+              installingWorker.onstatechange = () => {
+                if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                  console.log('Nowy numer zinu jest gotowy!');
+                  if (confirm('Wyszedł nowy numer Horizontal Fanzine! Przeładować, żeby wczytać nowe treści?')) {
+                    window.location.reload();
+                  }
+                }
+              };
+            };
+
+          });
+        });
+      }
+    </script>
 </head>
 <body>
 
@@ -165,15 +193,13 @@
             <div class="viewport">
                 <div class="carousel-track" id="carouselTrack">
                     
+                    <!-- STRONA 1 -->
                     <ul class="carousel-page">
                         <li>
-                            <a href="strawpage.html">Numer 6,9 - 14.07.2026 - coś o mnie</a>
+                            <a href="aliens.html">Numer 6,66 - 13.07.2026 - taka kmina o rządzie usa :)</a>
                         </li>
                         <li>
-                            <a href="aliens.html">Numer 6,69 - 13.07.2026 - taka kmina o rządzie usa :)</a>
-                        </li>
-                        <li>
-                            <a href="Pionizować!.html">Numer 6,66 - 12.07.2026 - łap vlepki i udostępniaj ziom</a>
+                            <a href="Pionizować!.png">Numer 6,66 - 12.07.2026 - łap vlepki i udostępniaj ziom</a>
                         </li>
                         <li>
                             <a href="numer6.html">Numer 6 - 11.07.2026 - The Anarchy Cookbook // Death of lace code // sztuka gotyku</a>
@@ -181,10 +207,12 @@
                         <li>
                             <a href="numer5,5.html">Numer 5,5 - 27.06.2026 - luźny plan na wakacje</a>
                         </li>
-                       <li>
+                        <li>
                             <a href="numer5.html">Numer 5 - 27.06.2026 - Cyklizacja // World of Gun: Disassembly // Sztuka Romańska</a>
                         </li>
                     </ul>
+
+                    <!-- STRONA 2 -->
                     <ul class="carousel-page">
                         <li>
                             <a href="numer4.html">Numer 4 - 13.06.2026 - Anarchia / sztuka Bizancium</a>
@@ -198,7 +226,6 @@
                         <li>
                             <a href="numer1.html">Numer 1 - 02.05.2026 - Nowy polski zin / sztuka w prehistorii</a>
                         </li>
-
                         <li style="visibility: hidden; pointer-events: none;">
                             <a>Placeholder</a>
                         </li>
@@ -207,7 +234,6 @@
                 </div>
             </div>
             
-            <!-- Strzałka w prawo (następna strona w prawo) -->
             <button class="nav-btn" onclick="moveRight()">&#10095;</button>
         </div>
     </div>
