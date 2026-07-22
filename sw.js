@@ -4,10 +4,9 @@ const CACHE_NAME = 'horizontal-zine-v1';
 // Lista plików składających się na aplikację
 const ASSETS_TO_CACHE = [
   './',
-  './index.html',
-  './styles.css',
-  './app.js',
-  './manifest.json'
+  '.index.html',
+  '.styles.css',
+  '.manifest.json'
 ];
 
 // 1. Instalacja — pobieranie świeżych zasobów do keszu
