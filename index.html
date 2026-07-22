@@ -7,7 +7,10 @@
     <title>HORIZONTAL - Wydawnictwo Makoto_morpeko137</title>
     
     <!-- Link do manifestu PWA -->
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="./manifest.json">
+    
+    <!-- Wsparcie dla urządzeń Apple (iOS) -->
+    <link rel="apple-touch-icon" href="./icon-192.png">
 
     <style>
         body {
@@ -156,9 +159,10 @@
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('sw.js').then((registration) => {
+          // Rejestracja pliku Service Workera z katalogu głównego
+          navigator.serviceWorker.register('./sw.js').then((registration) => {
             
-            // Sprawdzaj dostępność nowej wersji SW przy otwarciu zinu
+            // Wymuszenie sprawdzenia aktualizacji pliku sw.js
             registration.update();
 
             registration.onupdatefound = () => {
